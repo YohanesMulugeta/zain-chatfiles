@@ -1,0 +1,26 @@
+[
+  {
+    "name": "free",
+    "price": 0,
+    "maxChats": 1,
+    "description": "Fre forever",
+    "uloadTokenLimit": 500000,
+    "conversationTokenLimit": 20000
+  },
+  {
+    "name": "Standard",
+    "price": 9.99,
+    "maxChats": 7,
+    "description": "Lorem episum sit amet",
+    "uloadTokenLimit": 4000000,
+    "conversationTokenLimit": 1500000
+  },
+  {
+    "name": "Premium",
+    "price": 19.99,
+    "maxChats": 25,
+    "description": "Premium",
+    "uloadTokenLimit": 8500000,
+    "conversationTokenLimit": 3200000
+  }
+]

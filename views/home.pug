@@ -1,0 +1,133 @@
+extends base
+include _pricingCard
+block append head
+
+include _featureCard
+block content
+
+    // Hero section
+    section#scroll-top.hero.position-relative
+        .container
+            .row
+                .col-lg-6.d-flex.align-items-center.justify-content-center.justify-content-lg-start
+                    .hero-content.text-center.text-lg-start
+                        h2.m-0.opacity-75.fs-3
+                            | Welcome!  I'm the
+                        h1.text-secondary-color.m-0.display-4
+                            | TutorText AI
+                        #typed-strings
+                            h1.display-5.fw-bold.text-turi
+                                span#typed
+                            br
+                .col-lg-6.d-lg-flex.align-items-center
+                    img.img-fluid(defer src="/assets/img/hero.png", alt="Robot")
+    // Targets
+    section.slider-main-containor.py-4.px-3.bg-turiLight
+        .main-slider
+            .reviews
+                h2.fw-bold.display-5 My Targets
+            // slide container
+            .slide-container
+                // each article
+                // next and prev btns
+            button.slider-btn.prev-btn
+                i.bi.bi-arrow-left-square
+            button.slider-btn.next-btn
+                i.bi.bi-arrow-right-square
+    
+    // Stripe
+    #modal-pay.modal.fade(tabindex="-1", aria-labelledby="exampleModalLabel", aria-hidden="true")
+        .modal-dialog.payment-modal
+            .modal-content
+                .modal-header
+                    h5#paymodal-label.modal-title Continue purchasing {plan_name} plan
+                    button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+                .modal-body
+                    button.btn-outline.btn-primary#btn-continue
+                        | Continue
+
+   
+        // Formatts
+    section.flip-card-container.py-4.px-3.px-lg-0.bg-turiLight
+        h2.fw-bold.display-5.text-center Supported File Formats
+        p
+            | We work hard to provide diffrent file formats avaliable! These are the Allowed Formats.
+        // desktop version
+        .card-group
+            .little-card.flip-card
+            .big-card.flip-card
+            .little-card.flip-card
+            .big-card.flip-card
+            .little-card.flip-card
+            .big-card.flip-card
+            .little-card.flip-card
+            .big-card.flip-card
+            //- .little-card.flip-card
+            .big-card.flip-card
+    // Pricing section
+    section.container.py-4.px-3.px-lg-0
+        .row.text-center
+            h2.fw-bold.display-5 Flexible and transparent pricing
+            p
+                | Whatever your status, our offers evolve according to your needs.
+    section.side.justify-content-center.section-pricing
+        -for(let i = 0; i < plans.length; i++)
+            +pricingCard(plans[i])
+        
+    // FAQs section
+    section.faqs.py-6.bg-turiLight.px-3.px-lg-0.bg-turiLight
+        .container
+            .row
+                .col-lg-8
+                    h2.fw-bold.display-5.text-center Frequently Asked Questions 
+                    h4.fw-bold.text-center
+                        | These are the most Frequently Asked Questions in our platform
+                    // Accordion
+                    #accordionExample.accordion
+                        .accordion-item
+                            h2#headingOne.accordion-header
+                                button.accordion-button(type="button", data-bs-toggle="collapse", data-bs-target="#collapseOne", aria-expanded="true", aria-controls="collapseOne")
+                                    | Which AI Model is used for the TutorText bot?
+                            #collapseOne.accordion-collapse.collapse.show(aria-labelledby="headingOne", data-bs-parent="#accordionExample")
+                                .accordion-body
+                                    | Our TutorText bot uses the advanced ChatGPT AI model for engaging and informative conversations with users. While we use other 
+                                    | AI models such as Pinecone and LangChain for other purposes, we have found ChatGPT to be the best-suited model for TutorText.
+                        .accordion-item
+                            h2#headingTwo.accordion-header
+                                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#collapseTwo", aria-expanded="false", aria-controls="collapseTwo")
+                                    | Can I cancel subscription any time?
+                            #collapseTwo.accordion-collapse.collapse(aria-labelledby="headingTwo", data-bs-parent="#accordionExample")
+                                .accordion-body
+                                    | Yes, you can cancel your TutorText subscription at any time. We believe in providing our users with flexibility and control over their 
+                                    | subscription, which is why we offer a hassle-free cancellation process. If you decide to cancel your subscription, simply visit your 
+                                    | account settings and select the cancellation option. 
+                                    | You will still have access to TutorText until the end of your current billing period, after which your subscription will be cancelled
+                        .accordion-item
+                            h2#headingThree.accordion-header
+                                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#collapseThree", aria-expanded="false", aria-controls="collapseThree")
+                                    | Can i add more than one pdf file ?
+                            #collapseThree.accordion-collapse.collapse(aria-labelledby="headingThree", data-bs-parent="#accordionExample")
+                                .accordion-body Yes, you can add more than one file. You can upload multiple files by selecting them one by one or by using a file compression tool to combine them into a single file before uploading. Once the files are added, you can continue to chat and discuss them in the same chat tab.
+                        .accordion-item
+                            h2#headingFour.accordion-header
+                                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#collapseFour", aria-expanded="false", aria-controls="collapseFour")
+                                    | What are the accepted formats ?
+                            #collapseFour.accordion-collapse.collapse(aria-labelledby="headingFour", data-bs-parent="#accordionExample")
+                                .accordion-body
+                                    | At TutorText, we accept a variety of file formats to ensure that our users can easily upload and work with their documents. 
+                                    | Currently, we support the following formats: PDF files, text files, PowerPoint files, and CSV files. This means that you can
+                                    | upload a wide range of document types to our platform and start chatting with them right away.
+                                    | If you have any questions or concerns about supported file formats, please don't hesitate to reach out to our support team.
+                        .accordion-item
+                            h2#headingFive.accordion-header
+                                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#collapseFive", aria-expanded="false", aria-controls="collapseFive")
+                                    | Does it outline the source from the PDF?
+                            #collapseFive.accordion-collapse.collapse(aria-labelledby="headingFive", data-bs-parent="#accordionExample")
+                                .accordion-body
+                                    | Yes, TutorText outlines the sources of the information it retrieves from the PDF. Our advanced AI model analyzes 
+                                    | the content of the PDF and provides relevant information based on the document's sources. This allows you to easily verify the accuracy of the information and track down the original source material if needed. Additionally, TutorText provides links to the 
+                                    | articles or websites from which the information was sourced, making it easy to access additional information and context
+                // background faq
+                .col-lg-4.bg-faq
+    
+    
