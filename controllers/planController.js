@@ -28,11 +28,11 @@ exports.getCheckoutSession = catchAsync(async function (req, res, next) {
     customer_email: req.user.email,
     payment_method_types: ['card'],
     client_reference_id: planId,
-    currency: 'eur',
+    currency: 'usd',
     line_items: [
       {
         price_data: {
-          currency: 'eur',
+          currency: 'usd',
           unit_amount: (plan.price * 100).toFixed(0),
           product_data: {
             name: plan.name,
