@@ -46,7 +46,11 @@ exports.chat = async (ws, req) => {
 
         // Cut the creation of new question from reaching to the user
         let space = 0;
+        let tokenUsage = 0;
         const streamHandler = {
+          handleLLMStart(llm, _prompts) {
+            tokenUsage += _prompts.join(' ').length / 3.8;
+          },
           handleLLMNewToken(token) {
             if (space < 2 && chatHistory.length > 0) {
               // console.log(token, '/////////');
@@ -73,9 +77,8 @@ exports.chat = async (ws, req) => {
         // ---------- Sending the source with source event
         ws.send(JSON.stringify({ source: response.sourceDocuments, event: 'source' }));
 
-        await userN.updateConversationTokens(
-          (response.text.length + sanitizedQuestion.length) / 4
-        );
+        tokenUsage += (response.text.length + sanitizedQuestion.length) / 4;
+        await userN.updateConversationTokens(tokenUsage);
 
         // Updating users chat history
         userN.chats
