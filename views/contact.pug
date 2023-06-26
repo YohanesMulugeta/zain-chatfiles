@@ -1,0 +1,20 @@
+extends base
+include _pricingCard
+
+block append head 
+    
+
+block content
+    section#scroll-top.breadcrumb
+        .container
+            .col-lg-8.text-center.text-lg-start
+                section.contact-form
+                    h3.h3.form-title Contact Form
+                    form.form(action="https://formspree.io/f/myyarglq", method="post")
+                        .input-wrapper
+                            input.form-input(type="text", name="fullname", placeholder="Full name", required)
+                            input.form-input(type="email", name="email", placeholder="Email address", required)
+                        textarea.form-input(name="message", placeholder="Your Message", required)
+                        button.form-btn(type="submit", data-form-btn)
+                            ion-icon(name="paper-plane")
+                            span Send Message

@@ -16,6 +16,7 @@ router.route('/about').get(viewController.about);
 router.route('/pricing').get(viewController.pricing);
 router.route('/register').get(viewController.register);
 router.route('/login').get(viewController.login);
+router.route('/contact').get(viewController.contact);
 
 router.route('/terms').get(viewController.terms);
 
