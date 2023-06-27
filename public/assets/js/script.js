@@ -17,12 +17,7 @@ window.onscroll = () => {
 //typing animation
 try {
   var typed = new Typed('#typed', {
-    strings: [
-      'For Students',
-      'For Researchers',
-      'For Curious Mind',
-      'For Analysts',
-    ],
+    strings: ['For Students', 'For Researchers', 'For Curious Mind', 'For Analysts'],
     backSpeed: 30,
     backDelay: 1300,
     typeSpeed: 30,
@@ -36,7 +31,7 @@ try {
 const dateText = document.querySelector('.text-date-footer');
 
 const date = new Date().getFullYear();
-dateText.innerHTML = ` Copyright © <strong>Company name</strong> ${date}. All rights reserved.`;
+dateText.innerHTML = ` Copyright © <strong>Yishak Abrham</strong> ${date}. All rights reserved.`;
 
 //price toggle
 const checkboxToggler = document.querySelector('.checkbox');
@@ -155,7 +150,7 @@ const startSlider = (type) => {
   if (!next) {
     next = container.firstElementChild;
   }
-  
+
   //remove
   active.classList.remove(['active']); //classlist returns in the form of array so we ['class'] syntax to specify the class we want to remove
   last.classList.remove(['last']);

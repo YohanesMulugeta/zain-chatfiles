@@ -34,6 +34,48 @@ block content
                 i.bi.bi-arrow-left-square
             button.slider-btn.next-btn
                 i.bi.bi-arrow-right-square
+    // Description section
+    section.how-it-works.py-3.text-center.px-3.px-lg-0
+        .container
+            .row
+                .col-lg-5.mt-4
+                    img.img-fluid.img-description(src="/assets/img/robot-with-books (1).jpg", alt="analysis picture")
+                .col-lg-7.mt-4.d-flex.align-items-center
+                    .div
+                        h2.fw-bold.display-5 How It Works?
+                        h4.fw-bold How Does TutorText Work when it compared to other chatbots?
+                        ul.text-lg-start
+                            li
+                                i.bi.bi-robot
+                                b Document collaboration
+                                | - With TutorText, users can upload and collaborate on documents
+                                | with AI-powered chatbot, allowing for more efficient 
+                                | and streamlined collaboration compared to other chatbot that are not specifically designed for document collaboration.
+                            li
+                                i.bi.bi-robot
+                                b  Academic research
+                                | - TutorText can help students and researchers quickly
+                                | identify sources and references within academic documents, 
+                                | promoting a more accurate and reliable research process compared to other chatbot that lack this specific functionality.
+                            li
+                                i.bi.bi-robot
+                                b  Document analysis
+                                | - TutorText can help analysts quickly analyze and interpret complex data 
+                                | within documents,
+                                | providing a more efficient and streamlined analysis process compared to other chatbots that may not have the same level of document
+                                | analysis capabilities.
+                            li
+                                i.bi.bi-robot
+                                b  Personalized learning
+                                | - With TutorText, students and curious minds can engage
+                                | with their documents in a more personalized and intuitive way, receiving feedback and suggestions in real-time, 
+                                | unlike other chatbots that may not be able to provide the same level of personalized engagement.
+                            li
+                                i.bi.bi-robot
+                                b Speed and accuracy
+                                | - TutorText is able to quickly and accurately identify and analyze documents, making the application a more efficient and 
+                                | reliable tool compared to other chatbots that may not be as accurate or speedy in their analysis and interpretation of documents.
+                            li
     
     // Stripe
     #modal-pay.modal.fade(tabindex="-1", aria-labelledby="exampleModalLabel", aria-hidden="true")
@@ -105,7 +147,7 @@ block content
                         .accordion-item
                             h2#headingThree.accordion-header
                                 button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#collapseThree", aria-expanded="false", aria-controls="collapseThree")
-                                    | Can i add more than one pdf file ?
+                                    | Can i add more than one file ?
                             #collapseThree.accordion-collapse.collapse(aria-labelledby="headingThree", data-bs-parent="#accordionExample")
                                 .accordion-body Yes, you can add more than one file. You can upload multiple files by selecting them one by one or by using a file compression tool to combine them into a single file before uploading. Once the files are added, you can continue to chat and discuss them in the same chat tab.
                         .accordion-item
@@ -115,7 +157,7 @@ block content
                             #collapseFour.accordion-collapse.collapse(aria-labelledby="headingFour", data-bs-parent="#accordionExample")
                                 .accordion-body
                                     | At TutorText, we accept a variety of file formats to ensure that our users can easily upload and work with their documents. 
-                                    | Currently, we support the following formats: PDF files, text files, PowerPoint files, and CSV files. This means that you can
+                                    | Currently, we support the following formats: PDF files, text files, and CSV files. This means that you can
                                     | upload a wide range of document types to our platform and start chatting with them right away.
                                     | If you have any questions or concerns about supported file formats, please don't hesitate to reach out to our support team.
                         .accordion-item

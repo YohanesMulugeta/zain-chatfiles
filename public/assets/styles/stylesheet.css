@@ -325,7 +325,8 @@ Backgrounds
 
 .bg-faq {
   background: url('/assets/img/faq.png');
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   border-radius: 10px;
 }
