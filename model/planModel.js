@@ -33,6 +33,14 @@ const planSchema = new mongoose.Schema({
 //   if(this._update.enabled)
 // });
 
+planSchema.pre('save', function (next) {
+  if (!this.isModified('enabled')) return next();
+
+  this.name === 'free' && (this.enabled = true);
+
+  next();
+});
+
 planSchema.pre(/^find/, function (next) {
   this.sort('-price');
 
@@ -44,6 +52,15 @@ planSchema.pre(/Update$/, function (next) {
 
   const update = this._update;
   delete update.name;
+
+  next();
+});
+
+planSchema.pre(/AndUpdate$/, async function (next) {
+  if (this._update.enabled) return next();
+
+  if ((await this.model.findOne(this._conditions)).name === 'free')
+    this._update.enabled = true;
 
   next();
 });

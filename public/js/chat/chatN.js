@@ -16,7 +16,7 @@ class Chat {
     this.state.docName = docName;
     this.state.history = chatHistory ? chatHistory : [];
     this.state.chatId = _id;
-    this.url = `wss://${location.hostname}${
+    this.url = `ws://${location.hostname}${
       location.port ? ':' + location.port : ''
     }/api/v1/pdf/chat/${_id}`;
     // this.url = `wss://${

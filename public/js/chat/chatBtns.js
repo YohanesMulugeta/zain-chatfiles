@@ -21,7 +21,7 @@ const chatToolsHtml = `
       <div class="chat-tools">
         <buton class="btn-add-document btn btn-tool">
           <i class="bi bi-journal-plus"></i>
-          <input id="add-file" type="file" hidden="" accept=".pdf,.txt">
+          <input id="add-file" type="file" hidden="" accept=".pdf,.txt,.doc,.docx,.csv,.epub">
         </buton>
         <buton class="btn-reset-chat btn btn-tool">
           <i class="bi bi-arrow-counterclockwise"></i>

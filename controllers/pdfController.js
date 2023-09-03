@@ -254,7 +254,9 @@ exports.deleteChat = catchAsync(async function (req, res, next) {
     return chat.id === chatId;
   });
 
-  await pineconeIndex.delete1({ deleteAll: true, namespace: vectorName });
+  try {
+    await pineconeIndex.delete1({ deleteAll: true, namespace: vectorName });
+  } catch (err) {}
 
   if (index !== -1) user.chats.splice(index, 1);
   await user.save({ validateBeforeSave: false });
